@@ -1,13 +1,12 @@
 import styles from "./App.module.css";
+import { InputLayout } from "./components/input/InputLayout";
 export function AppLayout() {
 	return (
 		<div className={styles.background}>
 			<div className={styles.container}>
 				<h1 className={styles.title}>To Do List for Girls</h1>
-				<div className={styles.input__container}>
-					<input className={styles.input} id="1" />
-					<button className={styles.add__btn}>Add</button>
-				</div>
+
+				<InputLayout />
 
 				<div className={styles.todo__list}>
 					<ul>
