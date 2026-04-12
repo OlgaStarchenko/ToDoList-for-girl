@@ -29,29 +29,3 @@
 	font-weight: 400;
 	font-style: normal;
 }
-
-.filter__container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-}
-
-.filter__btn {
-	color: rgb(209, 154, 163);
-	background-color: white;
-	padding: 0px 25px;
-	font-size: 20px;
-	border-radius: 12px;
-	margin-left: 10px;
-	border: 1px solid rgb(209, 154, 163);
-	margin-bottom: 10px;
-
-	transition: 0.2 s;
-}
-
-.filter__btn:hover {
-	font-weight: bold;
-	color: white;
-	background-color: rgb(209, 154, 163);
-}
