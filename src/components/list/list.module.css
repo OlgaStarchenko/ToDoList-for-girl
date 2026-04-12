@@ -1,0 +1,92 @@
+.todo__list {
+	border: 1px solid white;
+	border-radius: 12px;
+	min-height: 280px;
+}
+
+.todo__item {
+	display: flex;
+	align-items: center;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+.customCheckbox {
+	width: 20px;
+	height: 20px;
+	border: 2px solid rgb(209, 154, 163);
+	background-color: white;
+	border-radius: 5px;
+	display: inline-block;
+	position: relative;
+}
+
+.customCheckbox::after {
+	content: "✔";
+	color: rgb(209, 154, 163);
+	position: absolute;
+	bottom: -2px;
+	right: 2px;
+	font-size: 16px;
+
+	opacity: 0;
+	transition: 0.2s;
+}
+
+input:checked + .customCheckbox::after {
+	opacity: 1;
+}
+
+.customCheckbox:hover {
+	color: rgb(243, 217, 217);
+}
+
+.item {
+	color: rgb(209, 154, 163);
+	background-color: white;
+	padding: 10px;
+	font-size: 20px;
+	border-radius: 12px;
+	border: 1px solid rgb(209, 154, 163);
+	width: 270px;
+	margin: 5px;
+}
+.edit__btn {
+	color: rgb(209, 154, 163);
+	background-color: white;
+	padding: 0px 10px;
+	font-size: 15px;
+	border-radius: 5px;
+	margin: 10px 0;
+	border: 2px solid rgb(209, 154, 163);
+
+	transition: 0.2s;
+}
+.delete__btn {
+	color: rgb(209, 154, 163);
+	background-color: white;
+	padding: 0px 10px;
+	font-size: 15px;
+	border-radius: 5px;
+	margin: 10px 5px;
+	border: 2px solid rgb(209, 154, 163);
+
+	transition: 0.2s;
+}
+.edit__btn:hover {
+	font-weight: bold;
+	color: white;
+	background-color: rgb(209, 154, 163);
+}
+
+.delete__btn:hover {
+	font-weight: bold;
+	color: white;
+	background-color: rgb(209, 154, 163);
+}
+
+.item__completed {
+	text-decoration: line-through rgb(209, 154, 163);
+}
