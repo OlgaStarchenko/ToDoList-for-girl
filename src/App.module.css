@@ -1,6 +1,6 @@
 .title {
 	color: rgb(209, 154, 163);
-	font-size: 30px;
+	font-size: 40px;
 	font-weight: bold;
 	margin: 10px;
 	margin-top: 30px;
@@ -47,6 +47,14 @@
 	border-radius: 20px;
 	margin-left: 10px;
 	border: 1px solid rgb(209, 154, 163);
+
+	transition: 0.2 s;
+}
+
+.add__btn:hover {
+	font-weight: bold;
+	color: white;
+	background-color: rgb(209, 154, 163);
 }
 
 .todo__list {
@@ -59,16 +67,39 @@
 	display: flex;
 	align-items: center;
 }
-.input__checkbox {
-	appearance: none;
-	-webkit-appearance: none;
 
+input[type="checkbox"] {
+	display: none;
+}
+
+.customCheckbox {
 	width: 20px;
 	height: 20px;
 	border: 2px solid rgb(209, 154, 163);
 	background-color: white;
 	border-radius: 5px;
-	margin: 5px;
+	display: inline-block;
+	position: relative;
+}
+
+.customCheckbox::after {
+	content: "✔";
+	color: rgb(209, 154, 163);
+	position: absolute;
+	bottom: -2px;
+	right: 2px;
+	font-size: 16px;
+
+	opacity: 0;
+	transition: 0.2s;
+}
+
+input:checked + .customCheckbox::after {
+	opacity: 1;
+}
+
+.customCheckbox:hover {
+	color: rgb(243, 217, 217);
 }
 
 .item {
@@ -89,6 +120,8 @@
 	border-radius: 5px;
 	margin: 10px 0;
 	border: 2px solid rgb(209, 154, 163);
+
+	transition: 0.2s;
 }
 .delete__btn {
 	color: rgb(209, 154, 163);
@@ -98,6 +131,19 @@
 	border-radius: 5px;
 	margin: 10px 5px;
 	border: 2px solid rgb(209, 154, 163);
+
+	transition: 0.2s;
+}
+.edit__btn:hover {
+	font-weight: bold;
+	color: white;
+	background-color: rgb(209, 154, 163);
+}
+
+.delete__btn:hover {
+	font-weight: bold;
+	color: white;
+	background-color: rgb(209, 154, 163);
 }
 
 .item__completed {
@@ -120,4 +166,12 @@
 	margin-left: 10px;
 	border: 1px solid rgb(209, 154, 163);
 	margin-bottom: 10px;
+
+	transition: 0.2 s;
+}
+
+.filter__btn:hover {
+	font-weight: bold;
+	color: white;
+	background-color: rgb(209, 154, 163);
 }

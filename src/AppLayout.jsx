@@ -5,17 +5,18 @@ export function AppLayout() {
 			<div className={styles.container}>
 				<h1 className={styles.title}>To Do List for Girls</h1>
 				<div className={styles.input__container}>
-					<input className={styles.input} />
+					<input className={styles.input} id="1" />
 					<button className={styles.add__btn}>Add</button>
 				</div>
 
 				<div className={styles.todo__list}>
 					<ul>
 						<div className={styles.todo__item}>
-							<input
-								type="checkbox"
-								className={styles.input__checkbox}
-							></input>
+							<label className={styles.checkbox}>
+								<input type="checkbox" />
+								<span className={styles.customCheckbox}></span>
+							</label>
+
 							<li className={styles.item}>
 								Купить картошки, пожарить и съесть
 							</li>
