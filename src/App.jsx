@@ -1,5 +1,5 @@
-import "./App.css";
+import { AppLayout } from "./AppLayout";
 
 export function App() {
-	return <>Hello!</>;
+	return <AppLayout />;
 }
