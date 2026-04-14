@@ -35,7 +35,8 @@ export function App() {
 	}
 
 	function deleteTask(id) {
-		console.log(id);
+		const newTasks = tasks.filter((task) => task.id !== id);
+		setTasks(newTasks);
 	}
 
 	return (
