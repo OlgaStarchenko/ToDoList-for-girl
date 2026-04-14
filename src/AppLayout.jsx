@@ -11,7 +11,7 @@ export function AppLayout({
 	addTask,
 	tasks,
 	isRepeatTask,
-	error,
+	message,
 	onClose,
 	editTask,
 	deleteTask,
@@ -25,7 +25,7 @@ export function AppLayout({
 					setInput={setInput}
 					addTask={addTask}
 					isRepeatTask={isRepeatTask}
-					error={error}
+					message={message}
 				/>
 				{tasks.length > 0 ? (
 					<List
@@ -36,8 +36,20 @@ export function AppLayout({
 				) : (
 					<Empty />
 				)}
-				{isRepeatTask && <Modal error={error} onClose={onClose} />}
-				{!input && <Modal error={error} onClose={onClose} />}
+				{isRepeatTask && (
+					<Modal
+						message={message}
+						onConfirm={onClose}
+						nameConfirm={"OK"}
+					/>
+				)}
+				{!input && (
+					<Modal
+						message={message}
+						onConfirm={onClose}
+						nameConfirm={"OK"}
+					/>
+				)}
 				<FilterPanel />
 			</div>
 		</div>

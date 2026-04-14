@@ -4,29 +4,29 @@ import { AppLayout } from "./AppLayout";
 export function App() {
 	const [tasks, setTasks] = useState([]);
 	const [input, setInput] = useState("");
-	const [error, setError] = useState("");
+	const [message, setMessage] = useState("");
 
 	const isRepeatTask = tasks.some((task) => task.title === input);
 
 	function addTask(input) {
 		if (!input) {
-			setError("Enter a task name");
+			setMessage("Enter a task name");
 			return;
 		}
 
 		if (isRepeatTask) {
-			setError("A task with this name already exists");
+			setMessage("A task with this name already exists");
 			return;
 		}
 
 		const newTask = { title: input, id: Date.now(), isCompleted: false };
 		setTasks([...tasks, newTask]);
 		setInput("");
-		setError("");
+		setMessage("");
 	}
 
 	function onClose() {
-		setError("");
+		setMessage("");
 		setInput("");
 	}
 
@@ -46,7 +46,7 @@ export function App() {
 			addTask={addTask}
 			tasks={tasks}
 			isRepeatTask={isRepeatTask}
-			error={error}
+			message={message}
 			onClose={onClose}
 			editTask={editTask}
 			deleteTask={deleteTask}
