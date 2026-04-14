@@ -1,7 +1,7 @@
 import { Button } from "../button/Button";
 import styles from "../item/item.module.css";
 
-export function ItemLayout({ task }) {
+export function ItemLayout({ task, editTask, deleteTask }) {
 	return (
 		<li className={styles.todo__item}>
 			<label className={styles.checkbox}>
@@ -11,8 +11,17 @@ export function ItemLayout({ task }) {
 
 			<span className={styles.item}>{task.title}</span>
 
-			<Button name={"/"} classBtn={"edit__btn"} />
-			<Button name={"X"} classBtn={"delete__btn"} />
+			<Button classBtn={"edit__btn"} onClick={() => editTask(task.id)}>
+				/
+			</Button>
+			<Button
+				classBtn={"delete__btn"}
+				onClick={() => {
+					deleteTask(task.id);
+				}}
+			>
+				X
+			</Button>
 		</li>
 	);
 }

@@ -2,7 +2,7 @@ import styles from "./App.module.css";
 import { Empty } from "./components/empty/Empty";
 import { FilterPanel } from "./components/filterPanel/FilterPanel";
 import { Input } from "./components/input/Input";
-import { List } from "./components/list/list";
+import { List } from "./components/list/List";
 import { Modal } from "./components/modal/Modal";
 
 export function AppLayout({
@@ -13,6 +13,8 @@ export function AppLayout({
 	isRepeatTask,
 	error,
 	onClose,
+	editTask,
+	deleteTask,
 }) {
 	return (
 		<div className={styles.background}>
@@ -25,7 +27,15 @@ export function AppLayout({
 					isRepeatTask={isRepeatTask}
 					error={error}
 				/>
-				{tasks.length > 0 ? <List tasks={tasks} /> : <Empty />}
+				{tasks.length > 0 ? (
+					<List
+						tasks={tasks}
+						editTask={editTask}
+						deleteTask={deleteTask}
+					/>
+				) : (
+					<Empty />
+				)}
 				{isRepeatTask && <Modal error={error} onClose={onClose} />}
 				{!input && <Modal error={error} onClose={onClose} />}
 				<FilterPanel />

@@ -13,10 +13,11 @@ export function InputLayout({ input, setInput, addTask }) {
 
 			<Button
 				classBtn={"add__btn"}
-				name={"Add"}
 				input={input}
-				addTask={addTask}
-			/>
+				onClick={() => addTask(input)}
+			>
+				Add
+			</Button>
 		</div>
 	);
 }

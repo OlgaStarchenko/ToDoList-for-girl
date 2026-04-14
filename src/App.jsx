@@ -30,6 +30,14 @@ export function App() {
 		setInput("");
 	}
 
+	function editTask(id) {
+		console.log(id);
+	}
+
+	function deleteTask(id) {
+		console.log(id);
+	}
+
 	return (
 		<AppLayout
 			input={input}
@@ -39,6 +47,8 @@ export function App() {
 			isRepeatTask={isRepeatTask}
 			error={error}
 			onClose={onClose}
+			editTask={editTask}
+			deleteTask={deleteTask}
 		/>
 	);
 }

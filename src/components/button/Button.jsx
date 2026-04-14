@@ -1,14 +1,12 @@
 import styles from "./button.module.css";
 
-export function Button({ name, input, addTask, classBtn }) {
-	console.log(classBtn);
-
+export function Button({ children, classBtn, onClick }) {
 	return (
 		<button
 			className={`${styles.btn}  ${styles[classBtn]}`}
-			onClick={() => addTask(input)}
+			onClick={onClick}
 		>
-			{name}
+			{children}
 		</button>
 	);
 }
