@@ -1,8 +1,6 @@
 import styles from "../input/input.module.css";
 
 export function InputLayout({ input, setInput, addTask }) {
-	console.log(input);
-
 	return (
 		<div className={styles.input__container}>
 			<input

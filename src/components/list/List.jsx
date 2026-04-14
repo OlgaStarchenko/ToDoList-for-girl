@@ -1,5 +1,5 @@
 import { ListLayout } from "./ListLayout";
 
-export function List() {
-	return <ListLayout />;
+export function List({ tasks }) {
+	return <ListLayout tasks={tasks} />;
 }
