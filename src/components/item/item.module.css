@@ -47,39 +47,6 @@ input:checked + .customCheckbox::after {
 	width: 270px;
 	margin: 5px;
 }
-.edit__btn {
-	color: rgb(209, 154, 163);
-	background-color: white;
-	padding: 0px 10px;
-	font-size: 15px;
-	border-radius: 5px;
-	margin: 10px 0;
-	border: 2px solid rgb(209, 154, 163);
-
-	transition: 0.2s;
-}
-.delete__btn {
-	color: rgb(209, 154, 163);
-	background-color: white;
-	padding: 0px 10px;
-	font-size: 15px;
-	border-radius: 5px;
-	margin: 10px 5px;
-	border: 2px solid rgb(209, 154, 163);
-
-	transition: 0.2s;
-}
-.edit__btn:hover {
-	font-weight: bold;
-	color: white;
-	background-color: rgb(209, 154, 163);
-}
-
-.delete__btn:hover {
-	font-weight: bold;
-	color: white;
-	background-color: rgb(209, 154, 163);
-}
 
 .item__completed {
 	text-decoration: line-through rgb(209, 154, 163);

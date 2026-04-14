@@ -1,3 +1,4 @@
+import { Button } from "../button/Button";
 import styles from "../input/input.module.css";
 
 export function InputLayout({ input, setInput, addTask }) {
@@ -9,9 +10,13 @@ export function InputLayout({ input, setInput, addTask }) {
 				value={input}
 				onChange={(e) => setInput(e.target.value)}
 			/>
-			<button className={styles.add__btn} onClick={() => addTask(input)}>
-				Add
-			</button>
+
+			<Button
+				classBtn={"add__btn"}
+				name={"Add"}
+				input={input}
+				addTask={addTask}
+			/>
 		</div>
 	);
 }

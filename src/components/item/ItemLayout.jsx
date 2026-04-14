@@ -1,3 +1,4 @@
+import { Button } from "../button/Button";
 import styles from "../item/item.module.css";
 
 export function ItemLayout({ task }) {
@@ -9,8 +10,9 @@ export function ItemLayout({ task }) {
 			</label>
 
 			<span className={styles.item}>{task.title}</span>
-			<button className={styles.edit__btn}>/</button>
-			<button className={styles.delete__btn}>X</button>
+
+			<Button name={"/"} classBtn={"edit__btn"} />
+			<Button name={"X"} classBtn={"delete__btn"} />
 		</li>
 	);
 }

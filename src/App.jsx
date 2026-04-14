@@ -9,8 +9,6 @@ export function App() {
 	const isRepeatTask = tasks.some((task) => task.title === input);
 
 	function addTask(input) {
-		const isRepeatTask = tasks.some((task) => task.title === input);
-
 		if (!input) {
 			setError("Enter a task name");
 			return;
