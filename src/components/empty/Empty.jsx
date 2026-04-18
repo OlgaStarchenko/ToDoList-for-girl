@@ -1,5 +1,5 @@
-import { EmptyLayout } from "./EmptyLayout";
+import styles from "../empty/empty.module.css";
 
 export function Empty() {
-	return <EmptyLayout />;
+	return <p className={styles.empty}>Empty...</p>;
 }

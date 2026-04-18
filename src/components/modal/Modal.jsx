@@ -1,4 +1,4 @@
-import { ModalLayout } from "./ModalLayout";
+import styles from "../modal/modal.module.css";
 
 export function Modal({
 	message,
@@ -8,12 +8,18 @@ export function Modal({
 	nameCancel,
 }) {
 	return (
-		<ModalLayout
-			message={message}
-			onConfirm={onConfirm}
-			onCancel={onCancel}
-			nameConfirm={nameConfirm}
-			nameCancel={nameCancel}
-		/>
+		<div className={styles.overlay} onClick={onConfirm}>
+			<div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+				<p>{message}</p>
+				<button className={styles.OK__btn} onClick={onConfirm}>
+					{nameConfirm}
+				</button>
+				{nameCancel && (
+					<button className={styles.OK__btn} onClick={onCancel}>
+						{nameCancel}
+					</button>
+				)}
+			</div>
+		</div>
 	);
 }
