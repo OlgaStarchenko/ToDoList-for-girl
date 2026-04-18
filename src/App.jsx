@@ -6,10 +6,10 @@ export function App() {
 	const [input, setInput] = useState("");
 	const [message, setMessage] = useState("");
 
-	const isRepeatTask = tasks.some((task) => task.title === input);
-
 	function addTask(input) {
-		if (!input) {
+		const isRepeatTask = tasks.some((task) => task.title === input);
+
+		if (!input.trim()) {
 			setMessage("Enter a task name");
 			return;
 		}
@@ -20,7 +20,7 @@ export function App() {
 		}
 
 		const newTask = { title: input, id: Date.now(), isCompleted: false };
-		setTasks([...tasks, newTask]);
+		setTasks((prev) => [...prev, newTask]);
 		setInput("");
 		setMessage("");
 	}
@@ -45,7 +45,6 @@ export function App() {
 			setInput={setInput}
 			addTask={addTask}
 			tasks={tasks}
-			isRepeatTask={isRepeatTask}
 			message={message}
 			onClose={onClose}
 			editTask={editTask}

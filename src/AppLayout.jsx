@@ -10,7 +10,6 @@ export function AppLayout({
 	setInput,
 	addTask,
 	tasks,
-	isRepeatTask,
 	message,
 	onClose,
 	editTask,
@@ -20,13 +19,7 @@ export function AppLayout({
 		<div className={styles.background}>
 			<div className={styles.container}>
 				<h1 className={styles.title}>To Do List for Girls</h1>
-				<Input
-					input={input}
-					setInput={setInput}
-					addTask={addTask}
-					isRepeatTask={isRepeatTask}
-					message={message}
-				/>
+				<Input input={input} setInput={setInput} addTask={addTask} />
 				{tasks.length > 0 ? (
 					<List
 						tasks={tasks}
@@ -36,14 +29,8 @@ export function AppLayout({
 				) : (
 					<Empty />
 				)}
-				{isRepeatTask && (
-					<Modal
-						message={message}
-						onConfirm={onClose}
-						nameConfirm={"OK"}
-					/>
-				)}
-				{!input && (
+
+				{message && (
 					<Modal
 						message={message}
 						onConfirm={onClose}

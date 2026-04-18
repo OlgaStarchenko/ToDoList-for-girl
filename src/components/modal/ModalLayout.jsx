@@ -7,7 +7,6 @@ export function ModalLayout({
 	nameConfirm,
 	nameCancel,
 }) {
-	if (!message) return null;
 	return (
 		<div className={styles.overlay} onClick={onConfirm}>
 			<div className={styles.modal} onClick={(e) => e.stopPropagation()}>

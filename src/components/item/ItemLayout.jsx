@@ -12,7 +12,7 @@ export function ItemLayout({ task, editTask, deleteTask }) {
 			<span className={styles.item}>{task.title}</span>
 
 			<Button classBtn={"edit__btn"} onClick={() => editTask(task.id)}>
-				/
+				<img src="/src/assets/edit_24dp_D16D6A_FILL0_wght400_GRAD0_opsz24.svg" />
 			</Button>
 			<Button
 				classBtn={"delete__btn"}
@@ -20,7 +20,7 @@ export function ItemLayout({ task, editTask, deleteTask }) {
 					deleteTask(task.id);
 				}}
 			>
-				X
+				<img src="/src/assets/delete_24dp_D16D6A_FILL0_wght400_GRAD0_opsz24.svg" />
 			</Button>
 		</li>
 	);

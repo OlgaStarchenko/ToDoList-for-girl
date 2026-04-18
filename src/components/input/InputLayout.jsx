@@ -6,16 +6,11 @@ export function InputLayout({ input, setInput, addTask }) {
 		<div className={styles.input__container}>
 			<input
 				className={styles.input}
-				id="1"
 				value={input}
 				onChange={(e) => setInput(e.target.value)}
 			/>
 
-			<Button
-				classBtn={"add__btn"}
-				input={input}
-				onClick={() => addTask(input)}
-			>
+			<Button classBtn={"add__btn"} onClick={() => addTask(input)}>
 				Add
 			</Button>
 		</div>

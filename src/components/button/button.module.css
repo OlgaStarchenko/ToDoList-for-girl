@@ -1,5 +1,5 @@
 .btn {
-	color: rgb(209, 154, 163);
+	color: rgb(212, 124, 139);
 	background-color: white;
 	border: 1px solid rgb(209, 154, 163);
 
@@ -28,7 +28,6 @@
 
 .edit__btn:hover {
 	font-weight: bold;
-	color: white;
 	background-color: rgb(209, 154, 163);
 }
 
