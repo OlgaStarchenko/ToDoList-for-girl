@@ -1,7 +1,7 @@
 import styles from "../input/input.module.css";
 import { Button } from "../button/Button";
 
-export function Input({ input, setInput, addTask }) {
+export function Input({ input, setInput, addTask, edit, rewriteTaskText }) {
 	return (
 		<div className={styles.input__container}>
 			<input
@@ -9,10 +9,18 @@ export function Input({ input, setInput, addTask }) {
 				value={input}
 				onChange={(e) => setInput(e.target.value)}
 			/>
-
-			<Button classBtn={"add__btn"} onClick={() => addTask(input)}>
-				Add
-			</Button>
+			{edit ? (
+				<Button
+					classBtn={"add__btn"}
+					onClick={() => rewriteTaskText(input)}
+				>
+					Edit
+				</Button>
+			) : (
+				<Button classBtn={"add__btn"} onClick={() => addTask(input)}>
+					Add
+				</Button>
+			)}
 		</div>
 	);
 }

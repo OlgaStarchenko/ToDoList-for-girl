@@ -5,6 +5,8 @@ export function App() {
 	const [tasks, setTasks] = useState([]);
 	const [input, setInput] = useState("");
 	const [message, setMessage] = useState("");
+	const [edit, setEdit] = useState(false);
+	const [taskId, setTaskId] = useState("");
 
 	function addTask(input) {
 		const isRepeatTask = tasks.some((task) => task.title === input);
@@ -31,12 +33,35 @@ export function App() {
 	}
 
 	function editTask(id) {
-		console.log(id);
+		const oldText = tasks.find((task) => task.id === id)?.title;
+
+		setTaskId(id);
+		setInput(oldText);
+		setEdit(true);
+	}
+
+	function rewriteTaskText(newText) {
+		const isRepeatTask = tasks.some((task) => task.title === input);
+		const updatedTask = tasks.map((task) =>
+			task.id === taskId ? { ...task, title: newText } : task,
+		);
+		if (isRepeatTask) {
+			setMessage("A task with this name already exists");
+			return;
+		}
+		setTasks(updatedTask);
+		setEdit(false);
+		setInput("");
+	}
+
+	function confirmDeletion() {
+		setMessage("Are you sure you want to delete this task?");
 	}
 
 	function deleteTask(id) {
 		const newTasks = tasks.filter((task) => task.id !== id);
 		setTasks(newTasks);
+		setMessage("");
 	}
 
 	return (
@@ -49,6 +74,11 @@ export function App() {
 			onClose={onClose}
 			editTask={editTask}
 			deleteTask={deleteTask}
+			edit={edit}
+			rewriteTaskText={rewriteTaskText}
+			confirmDeletion={confirmDeletion}
+			taskId={taskId}
+			setTaskId={setTaskId}
 		/>
 	);
 }
