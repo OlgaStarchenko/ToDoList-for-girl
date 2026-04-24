@@ -8,6 +8,7 @@ export function List({
 	deleteTask,
 	confirmDeletion,
 	setTaskId,
+	handleComplete,
 }) {
 	return (
 		<div className={styles.todo__list}>
@@ -21,6 +22,7 @@ export function List({
 						deleteTask={deleteTask}
 						confirmDeletion={confirmDeletion}
 						setTaskId={setTaskId}
+						handleComplete={handleComplete}
 					/>
 				))}
 			</ul>

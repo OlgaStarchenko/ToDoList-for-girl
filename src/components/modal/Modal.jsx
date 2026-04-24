@@ -8,7 +8,7 @@ export function Modal({
 	nameCancel,
 }) {
 	return (
-		<div className={styles.overlay} onClick={onConfirm}>
+		<div className={styles.overlay} onClick={onCancel}>
 			<div className={styles.modal} onClick={(e) => e.stopPropagation()}>
 				<p>{message}</p>
 				<button className={styles.OK__btn} onClick={onConfirm}>

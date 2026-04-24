@@ -50,5 +50,5 @@ input:checked + .customCheckbox::after {
 }
 
 .item__completed {
-	text-decoration: line-through rgb(209, 154, 163);
+	text-decoration: line-through;
 }

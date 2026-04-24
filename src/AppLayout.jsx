@@ -19,6 +19,9 @@ export function AppLayout({
 	confirmDeletion,
 	taskId,
 	setTaskId,
+	handleComplete,
+	filter,
+	setFilter,
 }) {
 	return (
 		<div className={styles.background}>
@@ -39,6 +42,7 @@ export function AppLayout({
 						deleteTask={deleteTask}
 						confirmDeletion={confirmDeletion}
 						setTaskId={setTaskId}
+						handleComplete={handleComplete}
 					/>
 				) : (
 					<Empty />
@@ -66,7 +70,7 @@ export function AppLayout({
 						nameCancel={"Cancel"}
 					/>
 				)}
-				<FilterPanel />
+				<FilterPanel filter={filter} setFilter={setFilter} />
 			</div>
 		</div>
 	);

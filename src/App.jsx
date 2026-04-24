@@ -7,6 +7,7 @@ export function App() {
 	const [message, setMessage] = useState("");
 	const [edit, setEdit] = useState(false);
 	const [taskId, setTaskId] = useState("");
+	const [filter, setFilter] = useState("All");
 
 	function addTask(input) {
 		const isRepeatTask = tasks.some((task) => task.title === input);
@@ -64,12 +65,36 @@ export function App() {
 		setMessage("");
 	}
 
+	function handleComplete(id) {
+		const newTasks = tasks.map((task) => {
+			if (task.id === id) {
+				task.isCompleted = !task.isCompleted;
+			}
+			return task;
+		});
+		setTasks(newTasks);
+	}
+
+	function filterTasks() {
+		if (filter === "Active") {
+			return tasks.filter((task) => !task.isCompleted);
+		}
+		if (filter === "Completed") {
+			return tasks.filter((task) => task.isCompleted);
+		}
+		if (filter === "All") {
+			return tasks;
+		}
+	}
+
+	const filteredTasks = filterTasks();
+
 	return (
 		<AppLayout
 			input={input}
 			setInput={setInput}
 			addTask={addTask}
-			tasks={tasks}
+			tasks={filteredTasks}
 			message={message}
 			onClose={onClose}
 			editTask={editTask}
@@ -79,6 +104,10 @@ export function App() {
 			confirmDeletion={confirmDeletion}
 			taskId={taskId}
 			setTaskId={setTaskId}
+			handleComplete={handleComplete}
+			filterTasks={filterTasks}
+			filter={filter}
+			setFilter={setFilter}
 		/>
 	);
 }
