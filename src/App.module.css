@@ -29,3 +29,9 @@
 	font-weight: 400;
 	font-style: normal;
 }
+.app__body {
+	min-height: 280px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}

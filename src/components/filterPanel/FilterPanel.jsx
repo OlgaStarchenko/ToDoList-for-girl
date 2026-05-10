@@ -1,7 +1,7 @@
 import { Button } from "../button/Button";
 import styles from "../filterPanel/filterPanel.module.css";
 
-export function FilterPanel({ filter, setFilter }) {
+export function FilterPanel({ filter, setFilter, clearCompleted }) {
 	return (
 		<div className={styles.filter__container}>
 			<div className={styles.filter__top}>
@@ -30,7 +30,9 @@ export function FilterPanel({ filter, setFilter }) {
 			</div>
 
 			<div className={styles.filter__bottom}>
-				<Button classBtn={"filter__btn"}>Clear Completed</Button>
+				<Button classBtn={"filter__btn"} onClick={clearCompleted}>
+					Delete Completed
+				</Button>
 			</div>
 		</div>
 	);

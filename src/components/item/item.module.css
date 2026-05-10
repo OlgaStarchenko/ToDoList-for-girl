@@ -30,10 +30,6 @@ input[type="checkbox"] {
 	transition: 0.2s;
 }
 
-input:checked + .customCheckbox::after {
-	opacity: 1;
-}
-
 .customCheckbox:hover {
 	color: rgb(243, 217, 217);
 }
@@ -49,6 +45,9 @@ input:checked + .customCheckbox::after {
 	margin: 5px;
 }
 
-.item__completed {
+.item__completed .item {
 	text-decoration: line-through;
+}
+.item__completed .customCheckbox::after {
+	opacity: 1;
 }

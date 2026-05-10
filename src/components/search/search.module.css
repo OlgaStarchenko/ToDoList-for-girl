@@ -1,0 +1,11 @@
+.input {
+	padding: 10px;
+	font-size: 20px;
+	border-radius: 12px;
+	border: 1px solid rgb(209, 154, 163);
+	color: rgb(209, 154, 163);
+	width: 275px;
+}
+.search__container {
+	border: 1px solid rgb(255, 255, 255);
+}

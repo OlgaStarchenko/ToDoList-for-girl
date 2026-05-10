@@ -8,6 +8,8 @@ export function App() {
 	const [edit, setEdit] = useState(false);
 	const [taskId, setTaskId] = useState("");
 	const [filter, setFilter] = useState("All");
+	const [search, setSearch] = useState("");
+	const [searchTasks, setSearchTasks] = useState([]);
 
 	function addTask(input) {
 		const isRepeatTask = tasks.some((task) => task.title === input);
@@ -75,6 +77,19 @@ export function App() {
 		setTasks(newTasks);
 	}
 
+	function handleSearch() {
+		setSearchTasks(
+			tasks.filter((task) =>
+				task.title.toLowerCase().includes(search.toLowerCase()),
+			),
+		);
+	}
+
+	function clearSearch() {
+		setSearchTasks([]);
+		setSearch("");
+	}
+
 	function filterTasks() {
 		if (filter === "Active") {
 			return tasks.filter((task) => !task.isCompleted);
@@ -88,6 +103,10 @@ export function App() {
 	}
 
 	const filteredTasks = filterTasks();
+
+	function clearCompleted() {
+		setTasks(() => tasks.filter((task) => !task.isCompleted));
+	}
 
 	return (
 		<AppLayout
@@ -108,6 +127,12 @@ export function App() {
 			filterTasks={filterTasks}
 			filter={filter}
 			setFilter={setFilter}
+			clearCompleted={clearCompleted}
+			search={search}
+			setSearch={setSearch}
+			handleSearch={handleSearch}
+			searchTasks={searchTasks}
+			clearSearch={clearSearch}
 		/>
 	);
 }
